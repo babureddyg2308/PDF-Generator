@@ -12,17 +12,14 @@ exports.createBook = async (req, res) => {
         const book = new Book({ title, author, frontCover, backCover, pages });
         await book.save();
 
-        // Generate PDF
-        const doc = new PDFDocument();
+         const doc = new PDFDocument();
 
         doc.pipe(fs.createWriteStream(`./pdfs/${book._id}.pdf`));
 
-        // Add front cover
-        doc.image(frontCover, 0, 0, { width: doc.page.width, height: doc.page.height });
+         doc.image(frontCover, 0, 0, { width: doc.page.width, height: doc.page.height });
         doc.addPage();
 
-        // Add internal pages
-        pages.forEach(page => {
+         pages.forEach(page => {
             if (page.backgroundImage) {
                 doc.image(page.backgroundImage, 0, 0, { width: doc.page.width, height: doc.page.height });
             }
