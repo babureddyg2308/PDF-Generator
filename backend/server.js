@@ -12,11 +12,13 @@ connectDB();
 app.use(bodyParser.json());
 app.use('/api/books', bookRoutes);
 
- app.get('/', (req, res) => {
+// Default route to handle root URL
+app.get('/', (req, res) => {
     res.send('Backend server is running');
 });
 
- app.get('/health', (req, res) => {
+// Health check endpoint
+app.get('/health', (req, res) => {
     res.send({ status: 'UP' });
 });
 
