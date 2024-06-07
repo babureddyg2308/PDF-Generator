@@ -1,19 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import Admin from './pages/Admin';
-import CreatePdf from './pages/CreatePdf';
+import HomePage from './pages/HomePage';
+import AdminPage from './pages/AdminPage';
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/create" element={<CreatePdf />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/admin" element={<AdminPage />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

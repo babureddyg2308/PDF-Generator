@@ -50,11 +50,13 @@ const CreatePdf = () => {
       <h1>Create a New Book</h1>
       <div>
         <label>Author: </label>
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} required />
-      </div> <br />
+        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} required /> <br />
+      </div> <br /> <br />
+
       <div>
-        <label>Title: </label>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        <label>Title: </label> <br />
+
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required /> <br />
       </div><br />
       <div>
         <label>Front Cover Image: </label>
